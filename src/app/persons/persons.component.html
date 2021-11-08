@@ -1,0 +1,9 @@
+<button (click)="getPersons()">Get Persons</button>
+<div *ngFor="let person of persons">
+  <div>
+    <ul>
+      <li>{{ person.id }}</li>
+      <li>{{ person.first_name }}</li>
+    </ul>
+  </div>
+</div>
