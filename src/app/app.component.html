@@ -56,7 +56,7 @@
   </div>
 </div> -->
 
-<div class="grid flex-column h-screen bc0 m-0 p-0">
+<!-- <div class="grid flex-column bc0 m-0 p-0">
   <div class="flex-none col-12 p-0 m-0 bc1">
     <div class="flex h-4rem align-items-center">
       <div id="home-logo" class="w-2 pl-2"></div>
@@ -70,9 +70,81 @@
     <div class="flex">
       <div class="w-2">L</div>
       <div class="w-10 pl-2 flex">
-        <div class="w-9">M</div>
+        <div class="w-9">
+          <app-persons></app-persons>
+        </div>
         <div class="w-3">R</div>
       </div>
     </div>
   </div>
+</div> -->
+
+<div class="grid">
+  <div class="col-12 h-4rem flex m-0 p-0 shadow-1">
+    <div id="home-logo" class="w-2"></div>
+
+    <div class="w-8 flex align-items-center">
+      <div class="ml-1">
+        <p-button
+          label="emails"
+          icon="pi pi-send"
+          styleClass="p-button-primary"
+          badge="8"
+          badgeClass="p-badge-danger"
+          [disabled]="true"
+        ></p-button>
+      </div>
+
+      <div class="ml-1">
+        <p-button
+          label="Messages"
+          icon="pi pi-users"
+          styleClass="p-button-primary"
+          badge="8"
+          badgeClass="p-badge-danger"
+          [disabled]="true"
+        ></p-button>
+      </div>
+
+      <div class="ml-1">
+        <p-button
+          label="Persons"
+          icon="pi pi-users"
+          styleClass="p-button-primary"
+          badge="8"
+          badgeClass="p-badge-danger"
+          [disabled]="true"
+        ></p-button>
+      </div>
+    </div>
+
+    <div class="w-2 flex align-items-center justify-content-end mr-3">
+      <div class="pl-2 pr-2">
+        <p-dropdown
+          [options]="languages"
+          [(ngModel)]="selectedLanguage"
+          placeholder="En"
+          optionLabel="name"
+        ></p-dropdown>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-12 flex pl-0">
+    <div class="w-2">
+      <p-card>
+        <p-avatar
+          image="https://images.unsplash.com/photo-1597223557154-721c1cecc4b0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80"
+          styleClass="p-mr-2"
+          size="xlarge"
+          shape="circle"
+        ></p-avatar>
+        Susan Lodgic
+      </p-card>
+      <p-panelMenu [model]="items"></p-panelMenu>
+    </div>
+    <div class="w-10">MAIN</div>
+  </div>
+
+  <div class="col-12 fixed bottom-0 shadow-4">CEC</div>
 </div>
