@@ -80,7 +80,7 @@
 </div> -->
 
 <div class="grid">
-  <div class="col-12 h-4rem flex m-0 p-0 shadow-1">
+  <div id="navBar" class="col-12 h-4rem flex m-0 p-0 shadow-2 mainLayout z-5">
     <div id="home-logo" class="w-2"></div>
 
     <div class="w-8 flex align-items-center">
@@ -131,12 +131,12 @@
   </div>
 
   <div class="col-12 flex pl-0">
-    <div class="w-2 p-0 m-0">
+    <div class="w-2 p-0 m-0 stickyContent">
       <p-card>
         <div class="grid">
           <div class="col-4">
             <p-avatar
-              image="https://images.unsplash.com/photo-1597223557154-721c1cecc4b0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80"
+              label="SL"
               styleClass="p-mr-2"
               size="xlarge"
               shape="circle"
@@ -152,8 +152,23 @@
       </p-card>
       <p-panelMenu [model]="items"></p-panelMenu>
     </div>
-    <div class="w-10">MAIN</div>
+    <div class="w-10 mb-4">
+      <div class="ml-4">
+        <p-breadcrumb [model]="itemsBreadcrumb" [home]="home"></p-breadcrumb>
+      </div>
+      <div class="card">
+        <app-persons class=""></app-persons>
+      </div>
+      <p-sidebar
+        [(visible)]="displayRightSideBar"
+        position="right"
+        styleClass="p-sidebar-md"
+      >
+        Content
+      </p-sidebar>
+      <p-button type="text" (click)="showSideBar('r')" label="+"></p-button>
+    </div>
   </div>
 
-  <div class="col-12 fixed bottom-0 shadow-4">CEC</div>
+  <div class="col-12 fixed bottom-0 shadow-4 mainLayout z-5">CEC</div>
 </div>

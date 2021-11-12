@@ -23,14 +23,14 @@ export class AppComponent implements OnInit {
     { name: 'Chinese', code: 'ch' },
   ];
 
-  // {label: 'Update', icon: 'pi pi-refresh', command: () => {
-  //     this.notAnAction();
-  // },{label: 'Delete', icon: 'pi pi-times', command: () => {
-  //     this.notAnAction();
-  // },{label: 'Angular.io', icon: 'pi pi-info', url: 'http://angular.io'},
-  // {separator: true},
-  // {label: 'Setup', icon: 'pi pi-cog', routerLink: ['/setup']}
-  // ];
+  displayRightSideBar = false;
+
+  itemsBreadcrumb: MenuItem[] = [
+    { label: 'Persons', disabled: true },
+    { label: 'All', disabled: true },
+  ];
+
+  home = { icon: 'pi pi-home', routerLink: '/' };
 
   items: MenuItem[] = [
     {
@@ -232,6 +232,17 @@ export class AppComponent implements OnInit {
   }
 
   notAnAction() {}
+
+  showSideBar(option: string) {
+    switch (option) {
+      case 'r':
+        this.displayRightSideBar = !this.displayRightSideBar;
+        break;
+
+      default:
+        break;
+    }
+  }
 }
 
 interface Language {

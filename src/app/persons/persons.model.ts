@@ -7,4 +7,8 @@ export interface Person {
   email: string;
   phone_number: string;
   photo: string;
+  title_type: number;
+  person_type: number;
+  in_service_date: string;
+  out_service_date: string;
 }

@@ -16,8 +16,24 @@
   background-repeat: no-repeat;
 }
 
+#navBar {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+}
+
+.stickyContent {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 4rem;
+}
+
 #text-center {
   text-align: center;
+}
+
+.mainLayout {
+  background-color: rgb(248, 248, 248);
 }
 
 // .box {

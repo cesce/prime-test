@@ -17,6 +17,8 @@ import { DropdownModule } from 'primeng/dropdown';
 import { CardModule } from 'primeng/card';
 import { AvatarModule } from 'primeng/avatar';
 import { AvatarGroupModule } from 'primeng/avatargroup';
+import { SidebarModule } from 'primeng/sidebar';
+import { BreadcrumbModule } from 'primeng/breadcrumb';
 
 @NgModule({
   declarations: [AppComponent],
@@ -33,6 +35,8 @@ import { AvatarGroupModule } from 'primeng/avatargroup';
     CardModule,
     AvatarModule,
     AvatarGroupModule,
+    SidebarModule,
+    BreadcrumbModule,
     HttpClientInMemoryWebApiModule.forRoot(PersonsDataService),
   ],
   providers: [],
