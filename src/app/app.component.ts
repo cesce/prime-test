@@ -36,6 +36,7 @@ export class AppComponent implements OnInit {
     {
       label: 'Dashboard',
       icon: 'pi pi-pw pi-table',
+      disabled: true,
     },
     {
       label: 'Identity Manager',
@@ -50,15 +51,18 @@ export class AppComponent implements OnInit {
             },
             {
               label: 'Active',
+              disabled: true,
             },
             {
               label: 'New',
+              disabled: true,
             },
           ],
         },
         {
           label: 'Accounts',
           icon: 'pi pi-fw pi-desktop',
+          disabled: true,
           items: [
             {
               label: 'All',
@@ -74,6 +78,7 @@ export class AppComponent implements OnInit {
         {
           label: 'Roles',
           icon: 'pi pi-fw pi-wallet',
+          disabled: true,
           items: [
             {
               label: 'All',
@@ -91,6 +96,8 @@ export class AppComponent implements OnInit {
     {
       label: 'Request',
       icon: 'pi pi-fw pi-check-square',
+      disabled: true,
+      badge: '3',
       items: [
         {
           label: 'Contents',
@@ -119,6 +126,7 @@ export class AppComponent implements OnInit {
     {
       label: 'Reports',
       icon: 'pi pi-fw pi-chart-bar',
+      disabled: true,
       items: [
         {
           label: 'Edit',
@@ -138,6 +146,7 @@ export class AppComponent implements OnInit {
     {
       label: 'Badges',
       icon: 'pi pi-fw pi-id-card',
+      disabled: true,
       items: [
         {
           label: 'Edit',
@@ -157,6 +166,7 @@ export class AppComponent implements OnInit {
     {
       label: 'Workflows',
       icon: 'pi pi-fw pi-sitemap',
+      disabled: true,
       items: [
         {
           label: 'Edit',
@@ -176,6 +186,7 @@ export class AppComponent implements OnInit {
     {
       label: 'Administration',
       icon: 'pi pi-fw pi-sliders-h',
+      disabled: true,
       items: [
         {
           label: 'Edit',
@@ -195,6 +206,7 @@ export class AppComponent implements OnInit {
     {
       label: 'System Settings',
       icon: 'pi pi-fw pi-cog',
+      disabled: true,
       items: [
         {
           label: 'Edit',
