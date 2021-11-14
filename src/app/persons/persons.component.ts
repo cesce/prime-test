@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Person } from './persons.model';
 import { PersonsService } from './persons.service';
 
@@ -8,6 +8,9 @@ import { PersonsService } from './persons.service';
   styleUrls: ['./persons.component.scss'],
 })
 export class PersonsComponent implements OnInit {
+  @Output() eventSelectedPerson: EventEmitter<Person> =
+    new EventEmitter<Person>();
+
   person: Person = {
     id: -1,
     first_name: '',
@@ -75,5 +78,11 @@ export class PersonsComponent implements OnInit {
       .subscribe((response) => console.log(response));
     this.getPersons();
     this.resetValues();
+  }
+
+  onRowSelect(event: any): void {
+    // console.log(event);
+    const person = event.data;
+    this.eventSelectedPerson.emit(person);
   }
 }

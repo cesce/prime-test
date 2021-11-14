@@ -62,6 +62,7 @@
     scrollHeight="calc(100vh - 25vh)"
     styleClass="p-datatable-sm"
     scrollDirection="both"
+    (onRowSelect)="onRowSelect($event)"
   >
     <ng-template pTemplate="header">
       <tr>

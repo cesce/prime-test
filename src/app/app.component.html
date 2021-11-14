@@ -157,14 +157,82 @@
         <p-breadcrumb [model]="itemsBreadcrumb" [home]="home"></p-breadcrumb>
       </div>
       <div class="card">
-        <app-persons></app-persons>
+        <app-persons (eventSelectedPerson)="selectPerson($event)"></app-persons>
       </div>
       <p-sidebar
         [(visible)]="displayRightSideBar"
         position="right"
-        styleClass="p-sidebar-md"
+        styleClass="p-sidebar-sd"
       >
-        Content
+        <p-card
+          header="{{
+            selectedPerson.title_type + ' ' + selectedPerson.first_name
+          }}"
+          subheader="{{
+            selectedPerson.middle_name + ' ' + selectedPerson.last_name
+          }}"
+          styleClass="p-card-shadow"
+        >
+          <ng-template pTemplate="header"> </ng-template>
+          <div class="grid">
+            <div class="col-4">
+              <p-avatar
+                label="{{
+                  selectedPerson.first_name.charAt(0) +
+                    selectedPerson.last_name.charAt(0)
+                }}"
+                styleClass="p-mr-2"
+                size="xlarge"
+                shape="circle"
+              ></p-avatar>
+            </div>
+            <div class="col-8">
+              <div>
+                <span style="font-weight: bold">Id:</span>
+                {{ selectedPerson.id }}
+              </div>
+              <div>
+                <span style="font-weight: bold">Person Type:</span>
+                {{ selectedPerson.person_type }}
+              </div>
+            </div>
+            <div class="col-12">
+              <span style="font-weight: bold">email:</span>
+              {{ selectedPerson.email }}
+            </div>
+            <div class="col-12">
+              <span style="font-weight: bold">Personal Number:</span>
+              {{ selectedPerson.personal_number }}
+            </div>
+            <div class="col-12">
+              <span style="font-weight: bold">Phone Number:</span>
+              {{ selectedPerson.phone_number }}
+            </div>
+            <div class="col-12">
+              <span style="font-weight: bold">In Service Date:</span>
+              {{ selectedPerson.in_service_date }}
+            </div>
+            <div class="col-12">
+              <span style="font-weight: bold">Out Service Date:</span>
+              {{ selectedPerson.out_service_date }}
+            </div>
+          </div>
+          <!-- <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore
+            sed consequuntur error repudiandae numquam deserunt quisquam
+            repellat libero asperiores earum nam nobis, culpa ratione quam
+            perferendis esse, cupiditate neque quas!
+          </p>
+          <ng-template pTemplate="footer">
+            <p-button label="Save" icon="pi pi-check"></p-button>
+            <p-button
+              label="Cancel"
+              icon="pi pi-times"
+              styleClass="p-button-secondary"
+              [style]="{ 'margin-left': '.5em' }"
+            ></p-button>
+          </ng-template> -->
+        </p-card>
       </p-sidebar>
       <!-- <p-button type="text" (click)="showSideBar('r')" label="+"></p-button> -->
     </div>

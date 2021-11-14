@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PrimeNGConfig } from 'primeng/api';
 import { MenuItem } from 'primeng/api';
+import { Person } from './persons/persons.model';
 
 @Component({
   selector: 'app-root',
@@ -31,6 +32,23 @@ export class AppComponent implements OnInit {
   ];
 
   home = { icon: 'pi pi-home', routerLink: '/' };
+
+  person: Person = {
+    id: -1,
+    first_name: 'Eva',
+    last_name: 'Panadero',
+    middle_name: '',
+    personal_number: '',
+    email: '',
+    phone_number: '',
+    photo: '',
+    title_type: 1,
+    person_type: 1,
+    in_service_date: new Date().toISOString(),
+    out_service_date: new Date().toISOString(),
+  };
+
+  selectedPerson: Person = this.person;
 
   items: MenuItem[] = [
     {
@@ -242,6 +260,12 @@ export class AppComponent implements OnInit {
       default:
         break;
     }
+  }
+
+  selectPerson(person: Person) {
+    console.log(person);
+    this.showSideBar('r');
+    this.selectedPerson = person;
   }
 }
 
