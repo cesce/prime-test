@@ -13,7 +13,7 @@
   </div>
 </div> -->
 
-<div class="m-4">
+<!-- <div class="m-4">
   <p-table
     [value]="persons"
     [scrollable]="true"
@@ -21,6 +21,9 @@
     scrollDirection="both"
     responsiveLayout="scroll"
     styleClass="p-datatable-sm"
+    selectionMode="single"
+    [(selection)]="selectedPerson"
+    dataKey="id"
   >
     <ng-template pTemplate="header">
       <tr>
@@ -44,16 +47,54 @@
         <td style="width: 200px">{{ person.phone_number }}</td>
       </tr>
     </ng-template>
-    <ng-template pTemplate="footer">
+  </p-table>
+  {{ selectedPerson.id }}
+</div> -->
+
+<div class="mt-4 ml-4">
+  <p-table
+    [value]="persons"
+    selectionMode="single"
+    [(selection)]="selectedPerson"
+    dataKey="id"
+    responsiveLayout="scroll"
+    [scrollable]="true"
+    scrollHeight="calc(100vh - 25vh)"
+    styleClass="p-datatable-sm"
+    scrollDirection="both"
+  >
+    <ng-template pTemplate="header">
       <tr>
-        <td style="width: 100px">Id</td>
-        <td style="width: 200px">Name</td>
-        <td style="width: 200px">Country</td>
-        <td style="width: 200px">Date</td>
-        <td style="width: 200px">Balance</td>
-        <td style="width: 200px">Company</td>
-        <td style="width: 200px">Status</td>
+        <th style="width: 40px">Id</th>
+        <th style="width: 120px">Person Type</th>
+        <th style="width: 200px">First Name</th>
+        <th style="width: 200px">Middle Name</th>
+        <th style="width: 200px">Last Name</th>
+        <th style="width: 200px">email</th>
+        <th style="width: 200px">Personal Number</th>
+        <th style="width: 120px">Phone Number</th>
+        <th style="width: 120px">Title Type</th>
+        <th style="width: 170px">In Service Date</th>
+        <th style="width: 170px">Out Service Date</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-person>
+      <tr [pSelectableRow]="person">
+        <td style="width: 40px">{{ person.id }}</td>
+        <td style="width: 120px">{{ person.person_type }}</td>
+        <td style="width: 200px">{{ person.first_name }}</td>
+        <td style="width: 200px">{{ person.middle_name }}</td>
+        <td style="width: 200px">{{ person.last_name }}</td>
+        <td style="width: 200px; word-break: break-word">
+          {{ person.email }}
+        </td>
+        <td style="width: 200px">{{ person.personal_number }}</td>
+        <td style="width: 120px">{{ person.phone_number }}</td>
+        <td style="width: 120px">{{ person.title_type }}</td>
+        <td style="width: 170px">{{ person.in_service_date }}</td>
+        <td style="width: 170px">{{ person.out_service_date }}</td>
       </tr>
     </ng-template>
   </p-table>
+  {{ selectedPerson.id }}
 </div>

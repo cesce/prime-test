@@ -8,7 +8,7 @@ import { PersonsService } from './persons.service';
   styleUrls: ['./persons.component.scss'],
 })
 export class PersonsComponent implements OnInit {
-  person = {
+  person: Person = {
     id: -1,
     first_name: '',
     last_name: '',
@@ -17,10 +17,15 @@ export class PersonsComponent implements OnInit {
     email: '',
     phone_number: '',
     photo: '',
+    title_type: 1,
+    person_type: 1,
+    in_service_date: new Date().toISOString(),
+    out_service_date: new Date().toISOString(),
   };
   edit = true;
   add = false;
   persons: Person[] = [];
+  selectedPerson: Person = this.person;
 
   constructor(private personsService: PersonsService) {}
 
