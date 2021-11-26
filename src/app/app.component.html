@@ -38,7 +38,7 @@
   </div>
 </div> -->
 
-<div class="box b-color-0">
+<!-- <div class="box b-color-0">
   <div class="row header b-color-1 h-4rem flex align-items-center">
     <div class="col-2">LOGO</div>
     <div class="col-8">FAV</div>
@@ -47,8 +47,196 @@
   <div class="row content b-color-2 flex">
     <div class="col-2">LEFT</div>
     <div class="col-10 flex">
-      <div class="col-10">CENTRAL</div>
+      <div class="col-10"> -->
+<!-- <app-persons></app-persons> -->
+<!-- MIDDLE
+      </div>
       <div class="col-2">RIGHT</div>
     </div>
   </div>
+</div> -->
+
+<!-- <div class="grid flex-column bc0 m-0 p-0">
+  <div class="flex-none col-12 p-0 m-0 bc1">
+    <div class="flex h-4rem align-items-center">
+      <div id="home-logo" class="w-2 pl-2"></div>
+      <div class="w-7 pl-2">M</div>
+      <div class="w-3 flex justify-content-end">
+        <div class="pr-2">L</div>
+      </div>
+    </div>
+  </div>
+  <div class="flex-grow-1 col-12 p-0 bc2">
+    <div class="flex">
+      <div class="w-2">L</div>
+      <div class="w-10 pl-2 flex">
+        <div class="w-9">
+          <app-persons></app-persons>
+        </div>
+        <div class="w-3">R</div>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<div class="grid">
+  <div id="navBar" class="col-12 h-4rem flex m-0 p-0 shadow-2 mainLayout z-5">
+    <div id="home-logo" class="w-2"></div>
+
+    <div class="w-8 flex align-items-center">
+      <div class="ml-1">
+        <p-button
+          label="emails"
+          icon="pi pi-send"
+          styleClass="p-button-primary"
+          badge="8"
+          badgeClass="p-badge-danger"
+          [disabled]="true"
+        ></p-button>
+      </div>
+
+      <div class="ml-1">
+        <p-button
+          label="Messages"
+          icon="pi pi-users"
+          styleClass="p-button-primary"
+          badge="2"
+          badgeClass="p-badge-danger"
+          [disabled]="true"
+        ></p-button>
+      </div>
+
+      <div class="ml-1">
+        <p-button
+          label="Persons"
+          icon="pi pi-users"
+          styleClass="p-button-primary"
+          badge="1"
+          badgeClass="p-badge-danger"
+          [disabled]="true"
+        ></p-button>
+      </div>
+    </div>
+
+    <div class="w-2 flex align-items-center justify-content-end mr-3">
+      <div class="pl-2 pr-2">
+        <p-dropdown
+          [options]="languages"
+          [(ngModel)]="selectedLanguage"
+          placeholder="En"
+          optionLabel="name"
+        ></p-dropdown>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-12 flex pl-0">
+    <div class="w-2 p-0 m-0 stickyContent">
+      <p-card>
+        <div class="grid">
+          <div class="col-4">
+            <p-avatar
+              label="SL"
+              styleClass="p-mr-2"
+              size="xlarge"
+              shape="circle"
+            ></p-avatar>
+          </div>
+          <div class="col-8">
+            <h3 class="m-0">Susan Lodgic</h3>
+            <h5 class="m-0 mt-2">Admin, Employee</h5>
+            <h6 class="m-0 mt-2">Last Login:</h6>
+            <h6 class="m-0 mt-1">12/09/2021 08:24h</h6>
+          </div>
+        </div>
+      </p-card>
+      <p-panelMenu [model]="items"></p-panelMenu>
+    </div>
+    <div class="w-10 mb-4">
+      <div class="ml-4">
+        <p-breadcrumb [model]="itemsBreadcrumb" [home]="home"></p-breadcrumb>
+      </div>
+      <div class="card">
+        <app-persons (eventSelectedPerson)="selectPerson($event)"></app-persons>
+      </div>
+      <p-sidebar
+        [(visible)]="displayRightSideBar"
+        position="right"
+        styleClass="p-sidebar-sd"
+      >
+        <p-card
+          header="{{
+            selectedPerson.title_type + ' ' + selectedPerson.first_name
+          }}"
+          subheader="{{
+            selectedPerson.middle_name + ' ' + selectedPerson.last_name
+          }}"
+          styleClass="p-card-shadow"
+        >
+          <ng-template pTemplate="header"> </ng-template>
+          <div class="grid">
+            <div class="col-4">
+              <p-avatar
+                label="{{
+                  selectedPerson.first_name.charAt(0) +
+                    selectedPerson.last_name.charAt(0)
+                }}"
+                styleClass="p-mr-2"
+                size="xlarge"
+                shape="circle"
+              ></p-avatar>
+            </div>
+            <div class="col-8">
+              <div>
+                <span style="font-weight: bold">Id:</span>
+                {{ selectedPerson.id }}
+              </div>
+              <div>
+                <span style="font-weight: bold">Person Type:</span>
+                {{ selectedPerson.person_type }}
+              </div>
+            </div>
+            <div class="col-12">
+              <span style="font-weight: bold">email:</span>
+              {{ selectedPerson.email }}
+            </div>
+            <div class="col-12">
+              <span style="font-weight: bold">Personal Number:</span>
+              {{ selectedPerson.personal_number }}
+            </div>
+            <div class="col-12">
+              <span style="font-weight: bold">Phone Number:</span>
+              {{ selectedPerson.phone_number }}
+            </div>
+            <div class="col-12">
+              <span style="font-weight: bold">In Service Date:</span>
+              {{ selectedPerson.in_service_date }}
+            </div>
+            <div class="col-12">
+              <span style="font-weight: bold">Out Service Date:</span>
+              {{ selectedPerson.out_service_date }}
+            </div>
+          </div>
+          <!-- <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore
+            sed consequuntur error repudiandae numquam deserunt quisquam
+            repellat libero asperiores earum nam nobis, culpa ratione quam
+            perferendis esse, cupiditate neque quas!
+          </p>
+          <ng-template pTemplate="footer">
+            <p-button label="Save" icon="pi pi-check"></p-button>
+            <p-button
+              label="Cancel"
+              icon="pi pi-times"
+              styleClass="p-button-secondary"
+              [style]="{ 'margin-left': '.5em' }"
+            ></p-button>
+          </ng-template> -->
+        </p-card>
+      </p-sidebar>
+      <!-- <p-button type="text" (click)="showSideBar('r')" label="+"></p-button> -->
+    </div>
+  </div>
+
+  <div class="col-12 fixed bottom-0 shadow-4 mainLayout z-5">CEC</div>
 </div>
